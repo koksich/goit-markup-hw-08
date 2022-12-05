@@ -1,0 +1,29 @@
+body {
+  font-family: $main-font, sans-serif;
+  letter-spacing: 0.03em;
+  color: $main-text-color;
+  background-color: $white-bg;
+}
+
+/* глобальне скидання стилів для елементів <h1>...<h6>, <p> і <ul>.
+*/
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}

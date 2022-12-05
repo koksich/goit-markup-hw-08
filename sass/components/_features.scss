@@ -1,0 +1,33 @@
+.features__list {
+  @extend %list;
+}
+
+.features__item {
+  margin-right: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.features__icon {
+  padding: 25px 102px;
+  margin-bottom: 30px;
+  background-color: $icon-bg-color;
+  border-radius: 4px;
+}
+
+.features__title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.71;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.features__desc {
+  font-size: 14px;
+  line-height: 1.71;
+  color: $secondary-text-color;
+  min-width: 270px;
+}

@@ -1,0 +1,22 @@
+.footer__contact {
+  margin-top: 20px;
+
+  font-size: 14px;
+  line-height: 1.71;
+  color: $white-text;
+  font-style: normal;
+}
+
+.footer-contact__link {
+  @extend %link;
+
+  font-size: 14px;
+  line-height: 1.71;
+  color: $footer-text-color;
+  padding-top: 9px;
+
+  &:hover,
+  &:focus {
+    color: $acent-color;
+  }
+}
