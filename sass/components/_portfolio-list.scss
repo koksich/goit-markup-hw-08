@@ -1,7 +1,10 @@
 .portfolio__list {
-  @extend %list;
+	@extend %list;
 
-  flex-wrap: wrap;
+	@media screen and (min-width: 768px) {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 /* ---СІТКА ПЕРШИЙ СПОСІБ--- */
@@ -16,28 +19,41 @@
 
     &:nth-last-child(-n + 3) {
 	margin-bottom: 0;
-    } 
+    }
 }
-
-
 
 /* ---СІТКА ДРУГИЙ СПОСІБ--- */
 .portfolio__item {
-  min-width: 370px;
-  background-color: $white-bg;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	// min-width: 450px;
+	// margin-bottom: 30px;
 
-  &:not(:nth-child(3n)) {
-    margin-right: 30px;
-  }
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		min-width: 354px;
+		&:not(:nth-child(2n)) {
+			margin-right: 30px;
+		}
 
-  &:not(:nth-last-child(-n + 3)) {
-    margin-bottom: 30px;
-  }
+		&:not(:nth-last-child(-n + 2)) {
+			margin-bottom: 30px;
+		}
+	}
 
-  &:hover,
-  &:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
-  }
+	@media screen and (min-width: 1200px) {
+		min-width: 370px;
+		&:not(:nth-child(3n)) {
+			margin-right: 30px;
+		}
+
+		&:not(:nth-last-child(-n + 3)) {
+			margin-bottom: 30px;
+		}
+	}
+
+	background-color: $white-bg;
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+	&:hover,
+	&:focus {
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+	}
 }

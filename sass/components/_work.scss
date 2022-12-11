@@ -1,32 +1,35 @@
 .work {
-  padding-top: 0;
+	padding-top: 0;
+	@media screen and (max-width: 1199px) {
+		display: none;
+	}
 }
 
 .work__list {
-  @extend %list;
+	@extend %list;
 
-  justify-content: space-between;
+	justify-content: space-between;
 }
 
 .work__item {
-  position: relative;
-  display: flex;
+	position: relative;
+	display: flex;
 }
 
 .work__desc {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 
-  padding-top: 27px;
-  height: 70px;
+	padding-top: 27px;
+	height: 70px;
 
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  text-transform: uppercase;
-  text-align: center;
-  color: $white-text;
-  background-color: rgba(47, 48, 58, 0.8);
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	text-transform: uppercase;
+	text-align: center;
+	color: $white-text;
+	background-color: rgba(47, 48, 58, 0.8);
 }

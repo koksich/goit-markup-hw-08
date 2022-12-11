@@ -1,80 +1,114 @@
 .team {
-  background-color: var(--team-bg-color);
+	background-color: $team-bg-color;
 }
 
 .team__list {
-  @extend %list;
+	@extend %list;
 
-  align-items: center;
-  justify-content: space-between;
+	@media screen and (min-width: 768px) {
+		display: flex;
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		flex-wrap: wrap;
+		margin: -15px;
+	}
+	align-items: center;
+	justify-content: space-between;
+}
+
+.team__item {
+	&:not(:last-child) {
+		@media screen and (max-width: 767px) {
+			margin-bottom: 30px;
+		}
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		width: calc((100% - 2 * 30px) / 2);
+		margin: 15px;
+	}
+	@media screen and (min-width: 1200px) {
+		margin-right: 30px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 }
 
 .card {
-  padding-bottom: 30px;
+	padding-bottom: 30px;
 
-  background-color: #fff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
+	text-align: center;
+
+	background-color: #fff;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 0px 0px 4px 4px;
 }
 
 .team__photo {
-  margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .team__name {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.18;
-  text-align: center;
-  margin-bottom: 10px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.18;
+	margin-bottom: 10px;
 }
 
 .team__position {
-  font-size: 16px;
-  line-height: 1.18;
-  text-align: center;
-  color: $secondary-text-color;
-  margin-bottom: 16px;
+	font-size: 16px;
+	line-height: 1.18;
+	color: $secondary-text-color;
+	margin-bottom: 16px;
 }
 
 .socialmedia__list {
-  @extend %list;
+	@extend %list;
 
-  justify-content: space-between;
-  padding: 0 32px;
+	display: flex;
+	justify-content: center;
+
+	&:not(:last-child) {
+		margin-right: 10px;
+	}
+
+	@media screen and (min-wisth: 1200px) {
+		justify-content: space-between;
+	}
 }
 
 .socialmedia__item {
-  width: 44px;
-  height: 44px;
+	width: 44px;
+	height: 44px;
 }
 
 .socialmedia {
-  @extend %link;
+	@extend %link;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-  width: 44px;
-  height: 44px;
+	width: 44px;
+	height: 44px;
 
-  border-radius: 50%;
-  color: #afb1b8;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	border-radius: 50%;
+	color: #afb1b8;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover,
-  &:focus {
-    color: $white-text;
-    background-color: $acent-color;
-  }
+	&:hover,
+	&:focus {
+		color: $white-text;
+		background-color: $acent-color;
+	}
 }
 
 .socialmedia__icon {
-  /* Другий спосіб розташув. іконки по центру
+	/* Другий спосіб розташув. іконки по центру
   margin: 12px 0 0 12px; */
 
-  fill: currentColor;
+	fill: currentColor;
 }

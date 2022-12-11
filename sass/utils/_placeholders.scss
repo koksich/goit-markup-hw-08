@@ -1,10 +1,12 @@
 /* убираем подчеркивание у всех ссылок */
 %link {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 /* убираем точки у всех елементов списка, делаем список флексом */
 %list {
-  list-style-type: none;
-  display: flex;
+	list-style-type: none;
+	@media screen and (min-width: 1200px) {
+		display: flex;
+	}
 }

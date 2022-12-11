@@ -1,33 +1,66 @@
 .features__list {
-  @extend %list;
+	@extend %list;
+
+	@media screen and (min-width: 768px) {
+		display: flex;
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		flex-wrap: wrap;
+		margin: -15px;
+	}
 }
 
 .features__item {
-  margin-right: 30px;
+	&:not(:last-child) {
+		@media screen and (max-width: 767px) {
+			margin-bottom: 30px;
+		}
+	}
 
-  &:last-child {
-    margin-right: 0;
-  }
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		width: calc((100% - 2 * 30px) / 2);
+		margin: 15px;
+	}
+	@media screen and (min-width: 1200px) {
+		margin-right: 30px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 }
 
 .features__icon {
-  padding: 25px 102px;
-  margin-bottom: 30px;
-  background-color: $icon-bg-color;
-  border-radius: 4px;
+	padding: 25px 190px;
+
+	@media screen and (min-width: 768px) {
+		padding: 25px 142px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		padding: 25px 100px;
+	}
+	margin-bottom: 30px;
+	background-color: $icon-bg-color;
+	border-radius: 4px;
 }
 
 .features__title {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.71;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+	@media screen and (max-width: 787px) {
+		text-align: center;
+	}
+
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.71;
+	text-transform: uppercase;
+	margin-bottom: 10px;
 }
 
 .features__desc {
-  font-size: 14px;
-  line-height: 1.71;
-  color: $secondary-text-color;
-  min-width: 270px;
+	font-size: 14px;
+	line-height: 1.71;
+	color: $secondary-text-color;
+	min-width: 270px;
 }

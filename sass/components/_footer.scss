@@ -1,13 +1,28 @@
 .footer {
-  background-color: $footer-bg-color;
-  padding-top: 60px;
-  padding-bottom: 60px;
+	background-color: $footer-bg-color;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 
 .footer-flex {
-  display: flex;
+	@media screen and (max-width: 1199px) {
+		text-align: center;
+	}
+	@media screen and (min-width: 1200px) {
+		display: flex;
+	}
 }
 
 .footer__info {
-  margin-right: 70px;
+	@media screen and (min-width: 1200px) {
+		margin-right: 70px;
+	}
+}
+
+.tablet-footer--flex {
+	@media screen and (min-width: 768px) {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 60px;
+	}
 }
