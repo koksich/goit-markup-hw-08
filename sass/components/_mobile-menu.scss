@@ -1,0 +1,154 @@
+// прячет меню табл/десктоп при расширенни на моб
+@media (max-width: 767px) {
+	.menu {
+		display: none;
+	}
+}
+
+.menu-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	// height: 100vh;
+	padding: 40px 40px;
+	background-color: $white-bg;
+
+	z-index: 2;
+
+	transform: translateY(-100%);
+	transition: transform 250ms ease-in-out;
+}
+
+.menu-toggle {
+	@media screen and (min-width: 768px) {
+		display: none;
+	}
+	min-height: 40px;
+	min-width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	padding: 0;
+
+	background-color: transparent;
+	color: $main-text-color;
+	cursor: pointer;
+	border: none;
+	border-radius: 50%;
+	outline: none;
+
+	&:hover,
+	&:focus {
+		color: $acent-color;
+	}
+}
+
+.menu-container.is-open {
+	transform: translateX(0);
+
+	& .menu-toggle {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		color: $main-text-color;
+	}
+
+	& .menu-toggle:hover,
+	& .menu-toggle:focus {
+		color: $acent-color;
+	}
+}
+
+.icon-menu,
+.icon-menu-close {
+	fill: currentColor;
+}
+
+.menu-list {
+	@extend %list;
+	margin-bottom: 306px;
+}
+
+.menu__item {
+	&:not(:last-child) {
+		margin-bottom: 32px;
+	}
+}
+
+.menu__link {
+	@extend %link;
+
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 1.175;
+	letter-spacing: 0.02em;
+
+	color: $main-text-color;
+
+	&:hover,
+	&:focus {
+		color: $acent-color;
+	}
+}
+
+.menu-contacts {
+	@extend %list;
+}
+
+.menu__tel {
+	margin-bottom: 32px;
+}
+
+.contact__link--tel,
+.contact__link--e-mail {
+	@extend %link;
+}
+
+.contact__link--tel {
+	font-weight: 500;
+	font-size: 34px;
+	line-height: 1.17;
+	letter-spacing: 0.02em;
+
+	color: $acent-color;
+}
+
+.contact__link--e-mail {
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 1.16;
+	letter-spacing: 0.02em;
+
+	color: $secondary-text-color;
+}
+
+.menu-socialmedia {
+	@extend %list;
+
+	display: flex;
+	margin-top: 50px;
+}
+
+.mob-social__item {
+	&:not(:last-child) {
+		box-sizing: border-box;
+		border-right: 1px solid rgba(33, 33, 33, 0.2);
+		padding-right: 10px;
+	}
+
+	&:not(:first-child) {
+		padding-left: 10px;
+	}
+}
+
+.mob-social__link {
+	@extend %link;
+
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.22;
+	letter-spacing: 0.02em;
+	color: $acent-color;
+}
